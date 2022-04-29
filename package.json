@@ -1,0 +1,13 @@
+{
+  "name": "pleaselookup",
+  "version": "1.0.0",
+  "description": "Interactive blog providing strongly-sourced facts about climate- & energy-related subjects.",
+  "repository": "git@github.com:mekkanix/pleaselookup.git",
+  "author": "mekkanix <paulguzdariviere@gmail.com>",
+  "license": "Private",
+  "private": true,
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
