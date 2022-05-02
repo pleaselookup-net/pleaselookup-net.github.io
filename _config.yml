@@ -22,7 +22,7 @@ title: PleaseLookUp
 email: contact@pleaselookup.net
 description: >- # this means to ignore newlines until "baseurl:"
   An attempt to describe the importance of climate- & energy-related subjects
-  by exposing strongly-sourced facts that are governing all parts of our societies,
+  by exposing strongly-sourced facts that are governing our societies,
   with a special effort made on general understanding.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -32,6 +32,9 @@ port: 4001
 
 # Build settings
 theme: minima
+keep_files:
+  - assets/dist/main.js
+  - assets/dist/main.css
 plugins:
   - jekyll-feed
 
