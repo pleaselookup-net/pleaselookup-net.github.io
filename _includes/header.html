@@ -1,0 +1,29 @@
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+
+<header>
+  <div class="plu-page-header">
+    <nav>
+      <div class="plu-main-nav">
+        <a href="{{ "/" | relative_url }}" class="main-nav__brand">
+          {{ site.title | escape }}
+        </a>
+
+        <div class="main-nav__menu">
+          {%- for path in page_paths -%}
+            {%- assign page = site.pages | where: "path", path | first -%}
+            {%- if page.title -%}
+              <a
+                class="main-nav__menu__item"
+                href="{{ page.url | relative_url }}"
+              >
+                {{ page.title | escape }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
