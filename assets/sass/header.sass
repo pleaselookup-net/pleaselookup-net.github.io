@@ -1,4 +1,4 @@
-.plu-page-header
+.plu-header
   background: #eee
 
   // Main navigation
@@ -14,9 +14,14 @@
       text-decoration: none
       color: $body-color
     .main-nav__menu
+      display: flex
+      height: 100%
       a
+        padding: 0 15px
         color: lighten($body-color, 10%)
+        line-height: 50px
         text-decoration: none
-
+        text-transform: uppercase
         &:hover
           color: $body-color
+          background: #ddd
