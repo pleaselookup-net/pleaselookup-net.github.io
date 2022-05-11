@@ -13,27 +13,27 @@ permalink: /articles/
 
 <div class="page page-articles">
   {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
+    {%- comment -%} {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
+    {%- endif -%} {%- endcomment -%}
 
-    <ul class="post-list">
+    <div class="articles">
       {%- for post in posts -%}
-        <li>
-          <span class="post-meta">
-            {{ post.date | date: date_format }}
-          </span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
+        <a class="article" href="{{ post.url | relative_url }}">
+          <div class="article__placeholder">
+            <h2 class="article__title">
               {{ post.title | escape }}
-            </a>
-          </h3>
+            </h2>
+          </div>
+          <div class="article__datetime">
+            {{ post.date | date: date_format }}
+          </div>
           {%- if site.show_excerpts -%}
             {{ post.excerpt }}
           {%- endif -%}
-        </li>
+        </a>
       {%- endfor -%}
-    </ul>
+    </div>
 
     {% if site.paginate %}
       <div class="pager">
