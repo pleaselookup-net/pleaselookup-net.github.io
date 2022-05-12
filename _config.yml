@@ -30,6 +30,9 @@ port: 4001
 
 # Build settings
 theme: minima
+exclude:
+  - assets/js/
+  - assets/sass/
 keep_files:
   - assets/dist/main.js
   - assets/dist/main.css
