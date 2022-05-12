@@ -1,0 +1,33 @@
+// Common
+.section
+  h2
+    margin: 0
+    padding: 20px 20px 0
+  .section__content
+    padding: 20px 20px
+
+// Articles
+.articles
+  display: flex
+  flex-wrap: wrap
+  column-gap: 20px
+  row-gap: 20px
+  padding: 20px 20px
+  .article
+    position: relative
+    flex: 0 0 calc(33.33334% - 13.333333333px)
+    padding: 10px
+    height: 300px
+    color: #333
+    background: #ddd
+    .article__title
+      position: absolute
+      top: 50%
+      left: 0
+      right: 0
+      transform: translate(0,-50%)
+      text-align: center
+    .article__datetime
+      position: absolute
+      bottom: 10px
+      left: 10px

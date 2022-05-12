@@ -2,10 +2,32 @@
 layout: default
 ---
 
-HOME PAGE
-<!--
+{% assign posts = site.posts | slice: 0, 3 %}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
 <div class="page page-home">
-  {{ content }}
+
+  <div class="section section-articles">
+    <h2>Last Articles</h2>
+    <div class="section__content articles">
+      {%- for post in posts -%}
+        <a class="article" href="{{ post.url | relative_url }}">
+          <div class="article__placeholder">
+            <h2 class="article__title">
+              {{ post.title | escape }}
+            </h2>
+          </div>
+          <div class="article__datetime">
+            {{ post.date | date: date_format }}
+          </div>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+  <!-- {{ content }}
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -20,7 +42,7 @@ HOME PAGE
     {%- endif -%}
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
+      {%- for post in site.posts -%}
       <li>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
@@ -53,6 +75,6 @@ HOME PAGE
       </div>
     {%- endif %}
 
-  {%- endif -%}
+  {%- endif -%} -->
 
-</div> -->
+</div>
