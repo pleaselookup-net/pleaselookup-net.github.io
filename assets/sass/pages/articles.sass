@@ -1,11 +1,13 @@
 .page-articles
   .articles
     display: flex
+    flex-wrap: wrap
     column-gap: 20px
+    row-gap: 20px
     padding: 20px 20px
     .article
       position: relative
-      flex: 0 1 33.33334%
+      flex: 0 0 calc(33.33334% - 13.333333333px)
       padding: 10px
       height: 300px
       color: #333
