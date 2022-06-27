@@ -1,20 +1,28 @@
-<footer class="plu-footer">
-  <!-- <div class="footer-col">
-    {%- if site.author %}
-      <ul class="contact-list">
-        {% if site.author.name -%}
-          <li class="p-name">{{ site.author.name | escape }}</li>
-        {% endif -%}
-        {% if site.author.email -%}
-          <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-        {%- endif %}
-      </ul>
-    {%- endif %}
-  </div> -->
-  <div class="plu-footer__description">
-    <p>{{ site.description | escape }}</p>
+<footer>
+  <div class="plu-footer">
+    <h2>{{ site.title | escape }}</h2>
+    <div class="plu-footer__row">
+      <div class="plu-footer__section description">
+        <p>{{ site.description | escape }}</p>
+      </div>
+      <div class="plu-footer__section sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+          {%- for path in page_paths -%}
+            {%- assign page = site.pages | where: "path", path | first -%}
+            {%- if page.title -%}
+              <li>
+                <a href="{{ page.url | relative_url }}">
+                  {{ page.title | escape }}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+    <div class="plu-footer__row meta">
+      <p>{{ site.title | escape }} &copy; 2022</p>
+    </div>
   </div>
-  <!-- <div class="social-links">
-    {%- include social.html -%}
-  </div> -->
 </footer>

@@ -5,11 +5,12 @@ layout: default
 {% assign posts = site.posts | slice: 0, 3 %}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-<div class="page page-home">
+<div class="page page-home has-sidepanel">
 
+  <!-- Spotlight -->
   <div class="section section-articles">
-    <h2>Last Articles</h2>
-    <div class="section__content articles">
+    <h2>Spotlight</h2>
+    <div class="section__content spotlight">
       {%- for post in posts -%}
         <a class="article" href="{{ post.url | relative_url }}">
           <div class="article__placeholder">
@@ -25,6 +26,36 @@ layout: default
           {%- endif -%}
         </a>
       {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="page__container">
+    <div class="page__content">
+
+      <!-- Last Articles -->
+      <div class="section last-articles">
+        <h2>Last Articles</h2>
+        <div class="section__content articles">
+          {%- for post in posts -%}
+            <a class="article" href="{{ post.url | relative_url }}">
+              <h2 class="article__title">
+                {{ post.title | escape }}
+              </h2>
+              <div class="article__datetime">
+                {{ post.date | date: date_format }}
+              </div>
+              <div class="article__placeholder"></div>
+              {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="page__sidepanel">
+      SIDEPANEL
     </div>
   </div>
   <!-- {{ content }}
