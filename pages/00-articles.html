@@ -20,14 +20,13 @@ permalink: /articles/
     <div class="articles">
       {%- for post in posts -%}
         <a class="article" href="{{ post.url | relative_url }}">
-          <div class="article__placeholder">
-            <h2 class="article__title">
-              {{ post.title | escape }}
-            </h2>
-          </div>
+          <h2 class="article__title">
+            {{ post.title | escape }}
+          </h2>
           <div class="article__datetime">
             {{ post.date | date: date_format }}
           </div>
+          <div class="article__placeholder"></div>
           {%- if site.show_excerpts -%}
             {{ post.excerpt }}
           {%- endif -%}
