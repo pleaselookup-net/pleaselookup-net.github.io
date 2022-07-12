@@ -10,7 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - name: Install deps (bundler)
+    - name: Index
+      run: ls -la
+    - name: Install deps
       run: sudo apt-get install -y gcc make ruby-full rubygems bundler jekyll
     - name: Build site
-      run: bundle exec jekyll serve
+      run: bundle exec jekyll build
