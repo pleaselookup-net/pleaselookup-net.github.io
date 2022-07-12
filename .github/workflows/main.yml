@@ -10,5 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - name: Build site (bundler)
+    - name: Install deps (bundler)
+      run: apt install bundler
+    - name: Build site
       run: bundle exec jekyll serve
