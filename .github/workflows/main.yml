@@ -12,6 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install packages
-      run: sudo apt-get install -y bundler jekyll
+      run: sudo apt-get install -y rubygems bundler jekyll
     - name: Build site (bundler)
       run: bundle exec jekyll build
